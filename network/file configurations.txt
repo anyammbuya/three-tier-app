@@ -1,0 +1,29 @@
+**************************************|  Take Note  |********************************************
+
+**************| web-tier Files	|********************************
+
+Do the following in the nginx.conf file:
+
+	-Make sure the user ubuntu. 
+	-Ensure that the line with the word root has the value /home/ubuntu/web-tier/build;
+	 We can equally change the directory where nginx will look for our website, say -
+	 /var/www/html/  which is the default for ubuntu. Our websit in the folder called build
+	 created automatically when we typed npm run build.
+	-Include the DNS Name of the Internal load balancer
+	
+**************| App-tier Files	|********************************
+
+Do the following in the DbConfig.js file:
+
+	-Put the necessary credentials for the database access. Use the writer instance used as DB_HOST Name
+	
+
+	
+
+
+
+
+
+
+
+ 

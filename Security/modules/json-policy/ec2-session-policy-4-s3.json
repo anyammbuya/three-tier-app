@@ -1,0 +1,39 @@
+{
+"Version": "2012-10-17",
+    "Statement": [
+        
+        {
+            "Sid": "S3BucketAccessForSessionManager",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectAcl",
+                "s3:PutObjectVersionAcl"
+            ],
+            "Resource": "arn:aws:s3:::zeus-ec2ssm-logsbu/*"
+        },
+        {
+            "Sid": "S3EncryptionForSessionManager",
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetEncryptionConfiguration"
+            ],
+            "Resource": "arn:aws:s3:::zeus-ec2ssm-logsbu"
+        },
+        {
+            "Sid": "KmsDecryptionForSessionManager",
+            "Effect": "Allow",
+            "Action": [
+                "kms:Decrypt"
+                
+            ],
+            "Resource": "arn:aws:kms:us-east-2:AWS-ACCOUNT-ID:alias/ec2-session"
+        },
+        {
+            "Sid": "GenerateKmsDataKeyToBeUsedOutsideKmsEnvelopEncryption",
+            "Effect": "Allow",
+            "Action": "kms:GenerateDataKey",
+            "Resource": "*"
+        }
+    ]
+}
