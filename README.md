@@ -1,7 +1,5 @@
 # Deploying a Three-tier Infrastructure With High Availability and Security (Includes KMS-SSM and ec2 session logging to s3)
 
-Reference: https://catalog.us-east-1.prod.workshops.aws/workshops/85cd2bb2-7f79-4e96-bdee-8078e469752a/en-US
-
 This is an example Terraform configuration the allows the deployment of a three-tier web architecture on AWS.
 
 ## What are the resources used in this architecture?
@@ -48,6 +46,15 @@ SSM
 DB subnet group
 
 Aurora-MySQL DB
+
+## Brief description of ec2 interactions
+
+ec2 profile has role for access to KMS, S3 and SSM. When a session is started by a user via the Internet with an ec2 instance in the App-tier
+subnet, that session is managed by SSM and encrypted with KMS. 
+
+EC2 sends encrypted log through SSM to S3.  
+
+EC2 has readOnly access to S3 permitting to download configuration files for the application being deployed.
 
 ## Brief steps on how this was accomplished
 
