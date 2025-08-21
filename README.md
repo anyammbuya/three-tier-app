@@ -47,6 +47,10 @@ DB subnet group
 
 Aurora-MySQL DB
 
+
+![3-tier](3-tier.png)
+
+
 ## Brief description of ec2 interactions
 
 ec2 profile has role for access to KMS, S3 and SSM. When a session is started by a user via the Internet with an ec2 instance in the App-tier
