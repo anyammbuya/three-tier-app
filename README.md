@@ -48,7 +48,7 @@ DB subnet group
 Aurora-MySQL DB
 
 
-![3-tier](3-tier.png)
+![3-tier](3tier.png)
 
 
 ## Brief description of ec2 interactions
