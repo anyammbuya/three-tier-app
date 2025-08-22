@@ -48,7 +48,7 @@ DB subnet group
 Aurora-MySQL DB
 
 
-![3-tier](3tier.png)
+![3-tier](3tiers.png)
 
 
 ## Brief description of ec2 interactions
@@ -56,7 +56,7 @@ Aurora-MySQL DB
 ec2 profile has role for access to KMS, S3 and SSM. When a session is started by a user via the Internet with an ec2 instance in the App-tier
 subnet, that session is managed by SSM and encrypted with KMS. 
 
-EC2 sends encrypted log through SSM to S3.  
+SSM Agent on EC2 sends encrypted log to S3.  
 
 EC2 has readOnly access to S3 permitting to download configuration files for the application being deployed.
 
